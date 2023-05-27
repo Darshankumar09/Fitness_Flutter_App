@@ -37,12 +37,16 @@ class _HomePageState extends State<HomePage> {
                       height: 10,
                     ),
                     TextField(
-                      decoration: const InputDecoration(
+                      controller: Global.searchController,
+                      decoration: InputDecoration(
                         labelText: "Search muscle name",
-                        border: OutlineInputBorder(),
-                        suffixIcon: IconButton(onPressed: () {
-
-                        }, icon: Icon(Icons.cancel),)
+                        border: const OutlineInputBorder(),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            Global.searchController.clear();
+                          },
+                          icon: const Icon(Icons.cancel),
+                        ),
                       ),
                       onSubmitted: (val) {
                         if (val.isNotEmpty) {
