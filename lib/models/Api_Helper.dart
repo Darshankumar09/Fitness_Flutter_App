@@ -9,9 +9,9 @@ class APIHelper {
 
   static APIHelper apiHelper = APIHelper._();
 
-  Future<List<FitnessModel>?> fetchData() async {
+  Future<List<FitnessModel>?> fetchData(String name) async {
     String baseURl = "https://api.api-ninjas.com/v1/exercises?muscle=";
-    String endURL = "biceps";
+    String endURL = name;
 
     String api = baseURl + endURL;
 
